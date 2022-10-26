@@ -19,7 +19,14 @@ function App() {
               {/* {[...Array(8)].map((_, index) => (
                 <PizzaCard key={index}  />
               ))} */}
-              <PizzaCard title={"Мексиканська піца"} price={900} />
+              <PizzaCard title={"Мексиканська піца"} price={150} />
+              <PizzaCard title={"Мексиканська піца"} price={150} />
+              <PizzaCard title={"Мексиканська піца"} price={150} />
+              <PizzaCard title={"Мексиканська піца"} price={150} />
+              <PizzaCard title={"Мексиканська піца"} price={150} />
+              <PizzaCard title={"Мексиканська піца"} price={150} />
+              <PizzaCard title={"Мексиканська піца"} price={150} />
+              <PizzaCard title={"Мексиканська піца"} price={150} />
             </div>
           </div>
         </div>

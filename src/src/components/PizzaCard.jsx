@@ -1,5 +1,9 @@
-function PizzaCard(props) {
-  
+import React from 'react'
+
+function PizzaCard({title, price}) {
+             const [pizzaCount,setPizzaCount] = React.useState(0);
+             const ClickOnAdd = () => {setPizzaCount(pizzaCount+1);}
+
     return(            
         <div className="pizza-card">
     <img
@@ -7,7 +11,7 @@ function PizzaCard(props) {
       src="https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg"
       alt="Pizza"
     />
-    <h4 className="pizza-card__title">{props.title}</h4>
+    <h4 className="pizza-card__title">{title}</h4>
     <div className="pizza-card__selector">
       <ul>
         <li className="active">тонкое</li>
@@ -20,8 +24,8 @@ function PizzaCard(props) {
       </ul>
     </div>
     <div className="pizza-card__bottom">
-      <div className="pizza-card__price">від {props.price} грн.</div>
-      <div className="button button--outline button--add">
+      <div className="pizza-card__price">від {price} грн.</div>
+      <button onClick={() => ClickOnAdd()} className="button button--outline button--add">
         <svg
           width="12"
           height="12"
@@ -34,9 +38,9 @@ function PizzaCard(props) {
             fill="white"
           />
         </svg>
-        <span>Добавить</span>
-        <i>2</i>
-      </div>
+        <span>Додати</span>
+        <i>{pizzaCount}</i>
+      </button>
     </div>
   </div>);
 }

@@ -1,10 +1,20 @@
-@import 'variables';
+@import '../variables';
 
 .categories {
   ul {
     display: flex;
-
+    .pepperLi{
+       img{
+    margin-left: 5px;
+       }
+       img:hover {
+        position: relative;
+  transform: rotate(270deg);
+  transition: transform 0.15s ease-in-out;
+}
+    }
     li {
+      display: inherit;
       background-color: #f9f9f9;
       padding: 13px 30px;
       border-radius: 30px;

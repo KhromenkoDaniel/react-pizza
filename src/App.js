@@ -1,8 +1,8 @@
-import './App.scss';
-import Header from './src/components/Header';
-import Categories from './src/components/Categories';
-import Sort from './src/components/Sort';
-import PizzaCard from './src/components/PizzaCard';
+import './scss/app.scss';
+import Header from './components/Header';
+import Categories from './components/Categories';
+import Sort from './components/Sort';
+import PizzaCard from './components/PizzaCard';
 function App() {
    return (
       <div className='App'>

@@ -4,11 +4,12 @@ import PepperIcon from '../assets/img/pepper.png'
 
 function Categories() {
   const [activeIndex,setActiveIndex] = React.useState(0);
-const categories = ['Всі','М\'ясні','Вегетаріанські','Гриль','Гострі','Закриті']
-  const onCLickCategory = (categoryIndex) => { setActiveIndex(categoryIndex)}
+  
+  const categories = ['Всі','М\'ясні','Вегетаріанські','Гриль','Гострі','Закриті']
+
     return (
       <div className="categories">
-        <ul>{categories.map((value,i) => (<li onClick={() => onCLickCategory(i)} className={activeIndex === i ? 'active' : ''}>{value}</li>))}
+        <ul>{categories.map((value,index) => (<li key={index} onClick={() => setActiveIndex(index)} className={activeIndex === index ? 'active' : ''}>{value}</li>))}
           
           {/*<li onClick={() => onCLickCategory(0)} className={activeIndex === 0 ? 'active' : ''}>Всі</li> 
           <li onClick={() => onCLickCategory(1)} className={activeIndex === 1 ? 'active' : ''}>М'ясні</li>

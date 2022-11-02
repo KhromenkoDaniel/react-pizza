@@ -1,8 +1,14 @@
+import React from 'react';
+
 import './scss/app.scss';
+
 import Header from './components/Header';
 import Categories from './components/Categories';
 import Sort from './components/Sort';
 import PizzaCard from './components/PizzaCard';
+
+import pizzas from './assets/pizzas.json';
+
 function App() {
    return (
       <div className='App'>
@@ -16,17 +22,9 @@ function App() {
                   </div>
                   <h2 className='content__title'>Все пиццы</h2>
                   <div className='content__items'>
-                     {/* {[...Array(8)].map((_, index) => (
-                <PizzaCard key={index}  />
-              ))} */}
-                     <PizzaCard title={'Мексиканська піца'} price={150} />
-                     <PizzaCard title={'Мексиканська піца'} price={150} />
-                     <PizzaCard title={'Мексиканська піца'} price={150} />
-                     <PizzaCard title={'Мексиканська піца'} price={150} />
-                     <PizzaCard title={'Мексиканська піца'} price={150} />
-                     <PizzaCard title={'Мексиканська піца'} price={150} />
-                     <PizzaCard title={'Мексиканська піца'} price={150} />
-                     <PizzaCard title={'Мексиканська піца'} price={150} />
+                     {pizzas.map((obj, id) => (
+                        <PizzaCard key={id} {...obj} />
+                     ))}
                   </div>
                </div>
             </div>

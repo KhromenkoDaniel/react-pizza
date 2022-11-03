@@ -3,15 +3,6 @@
 .categories {
   ul {
     display: flex;
-    .pepperLi{
-       img{
-    margin-left: 5px;
-       }
-       img:hover {
-        position: relative;
-  transform: rotate(270deg);
-  transition: transform 0.15s ease-in-out;
-}
     }
     li {
       display: inherit;
@@ -38,4 +29,4 @@
       }
     }
   }
-}
+

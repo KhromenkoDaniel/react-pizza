@@ -15,6 +15,7 @@ function Home() {
             .then((data) => {
                     setItems(data);
                     setIsLoading(false);
+                    window.scrollTo(0, 0);
             });
 
     }, []);
@@ -24,7 +25,7 @@ function Home() {
               <Categories />
               <Sort />
           </div>
-          <h2 className='content__title'>Все пиццы</h2>
+          <h2 className='content__title'>Всі піци🧡</h2>
           <div className='content__items'>
               {isLoading ? Array(12).fill(0).map((_, index) => <Skeleton key={index} />)
                   : items.map((item) => <PizzaCard key={item.id} {...item} />)}

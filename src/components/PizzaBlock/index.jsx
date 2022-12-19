@@ -6,15 +6,16 @@ function PizzaCard({title, price,imageUrl,types,sizes,category,rating}) {
   const [activeType,setActiveType]= React.useState(0);
   const [activeSize,setActiveSize]= React.useState(0);
 
-    return(            
-        <div className="pizza-card">
+    return(
+        <div className="pizza-block-wrapper">
+        <div className="pizza-block">
     <img
-      className="pizza-card__image"
+      className="pizza-block__image"
       src={imageUrl}
       alt="Pizza"
     />
-    <h4 className="pizza-card__title">{title}</h4>
-    <div className="pizza-card__selector">
+    <h4 className="pizza-block__title">{title}</h4>
+    <div className="pizza-block__selector">
       <ul>
       {types.map((typeId,index) => <li onClick={() => setActiveType(typeId)} className={activeType === typeId ? 'active' : ''} key={index}> {typeNames[typeId]}</li>)}
       </ul>
@@ -22,8 +23,8 @@ function PizzaCard({title, price,imageUrl,types,sizes,category,rating}) {
      {sizes.map((size,index) => <li onClick={() => setActiveSize(index)} className={activeSize === index ? 'active' : ''} key={index}>{size} см.</li>)}
       </ul>
     </div>
-    <div className="pizza-card__bottom">
-      <div className="pizza-card__price">від {price} грн.</div>
+    <div className="pizza-block__bottom">
+      <div className="pizza-block__price">від {price} грн.</div>
       <button  className="button button--outline button--add">
         <svg
           width="12"
@@ -41,6 +42,8 @@ function PizzaCard({title, price,imageUrl,types,sizes,category,rating}) {
         <i>0</i>
       </button>
     </div>
-  </div>);
+      </div>
+        </div>
+    );
 }
 export default PizzaCard;

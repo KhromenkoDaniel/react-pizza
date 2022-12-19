@@ -8,9 +8,10 @@ function Home() {
     const [items, setItems] = React.useState([]);
     const [isLoading, setIsLoading] = React.useState(true);
     const [categoryId, setCategoryId] = React.useState(0);
-    const [sortType, setSortType] = React.useState("popular");
+    const [sortType, setSortType] = React.useState(0);
     React.useEffect(() => {
-        fetch('https://6373751c348e9472990cfb4e.mockapi.io/items')
+        setIsLoading(true);
+        fetch('https://6373751c348e9472990cfb4e.mockapi.io/items?category=' + categoryId)
             .then((res) => {
                 return res.json();
             })
@@ -20,11 +21,11 @@ function Home() {
                     window.scrollTo(0, 0);
             });
 
-    }, []);
+    }, [categoryId]);
   return (
       <div className='container'>
           <div className='content__top'>
-              <Categories value={categoryId} onClickCategory={(id) => setCategoryId(id)} />
+              <Categories value={categoryId} onClickCategory={(i) => setCategoryId(i)} />
               <Sort />
           </div>
           <h2 className='content__title'>Всі піци🧡</h2>

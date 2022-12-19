@@ -7,6 +7,8 @@ import PizzaCard from "../components/PizzaBlock";
 function Home() {
     const [items, setItems] = React.useState([]);
     const [isLoading, setIsLoading] = React.useState(true);
+    const [categoryId, setCategoryId] = React.useState(0);
+    const [sortType, setSortType] = React.useState("popular");
     React.useEffect(() => {
         fetch('https://6373751c348e9472990cfb4e.mockapi.io/items')
             .then((res) => {
@@ -22,7 +24,7 @@ function Home() {
   return (
       <div className='container'>
           <div className='content__top'>
-              <Categories />
+              <Categories value={categoryId} onClickCategory={(id) => setCategoryId(id)} />
               <Sort />
           </div>
           <h2 className='content__title'>Всі піци🧡</h2>

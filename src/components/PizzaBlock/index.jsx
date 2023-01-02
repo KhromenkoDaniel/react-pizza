@@ -38,7 +38,7 @@ function PizzaCard({title, price,imageUrl,types,sizes,category,rating}) {
             fill="white"
           />
         </svg>
-        <span>Додати</span>
+        <span> Додати</span>
         <i>0</i>
       </button>
     </div>

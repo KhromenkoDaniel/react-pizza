@@ -3,12 +3,11 @@ import React from "react";
 function Sort({value, onClickSort}) {
   const [open,setOpen] = React.useState(false);
 
-    const list = [ {name:'популярності(DESC)',sortProperty: '-rating'},
-                   {name:'популярності(ASC)',sortProperty: 'rating'},
-                   {name:'ціні(DESC)',sortProperty: '-price'},
-                   {name:'ціні(ASC)',sortProperty: 'price'},
-                   {name:'алфавіту(DESC)',sortProperty: '-title'},
-                   {name:'алфавіту(ASC)',sortProperty: 'title'}];
+    const list = [ {name:'популярності',sortProperty: '-rating'},
+                   {name:'Від дорогих до дешевих',sortProperty: '-price'},
+                   {name:'Від дешевих до дорогих',sortProperty: 'price'},
+                   {name:'алфавіту (Я-А)',sortProperty: '-title'},
+                   {name:'алфавіту (A-Я)',sortProperty: 'title'}];
 
 
 

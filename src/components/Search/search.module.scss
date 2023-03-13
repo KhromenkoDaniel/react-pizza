@@ -1,12 +1,11 @@
 .search{
   position: relative;
-  left: -120px;
-
+  margin: 0 auto;
   input{
     border: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 12px 20px;
-    padding-left: 42px;
-    width: 400px;
+    padding: 12px 20px 12px 42px;
+    max-width: 500px;
+    width: 100%;
     border-radius: 15px;
     font-size: 16px;
 
@@ -34,5 +33,16 @@
 
   &:hover {
     opacity: 0.8;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .search {
+    position: absolute;
+    left: 0;
+
+    input {
+      width: 100%;
+    }
   }
 }

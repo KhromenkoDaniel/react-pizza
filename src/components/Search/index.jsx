@@ -1,10 +1,16 @@
 import * as React from "react";
 import styles from './search.module.scss';
 
-import { SearchContext } from "../../App";
+import {useDispatch, useSelector} from "react-redux";
+import {setSearchValue} from "../../redux/slices/searchSlice";
 function Search() {
 
-    const [searchValue, setSearchValue] = React.useContext(SearchContext);
+    const searchValue = useSelector(state => state.search.searchValue);
+
+    const dispatch = useDispatch();
+    const handleSearchChange = (event) => {
+        dispatch(setSearchValue(event.target.value));
+    };
     return(
         <div className={styles.search}>
             <svg
@@ -40,11 +46,11 @@ function Search() {
                     y2="20.366"
                 />
             </svg>
-            <input type="text" value={searchValue} onChange={(event) => setSearchValue(event.target.value)} placeholder="Пошук піци..." />
+            <input type="text" value={searchValue} onChange={handleSearchChange} placeholder="Пошук піци..." />
             {
                 searchValue &&
                 (<svg
-                    onClick={() => setSearchValue('')}
+                    onClick={() => dispatch(setSearchValue(""))}
                     className={styles.crossIcon}
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg">

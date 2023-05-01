@@ -1,7 +1,7 @@
 .root {
   li {
     display: inline-block;
-    
+
     a {
       text-align: center;
       width: 45px;
@@ -13,14 +13,14 @@
       cursor: pointer;
       display: inline-block;
       color: #fe5f1e;
-      
+
       &:hover {
         background-color: #fe5f1e;
         color: #fff;
       }
     }
   }
-  
+
   :global {
     .selected {
       a {

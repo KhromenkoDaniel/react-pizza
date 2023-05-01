@@ -1,28 +1,31 @@
-.search{
+.root {
   position: relative;
-  margin: 0 auto;
-  input{
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 12px 20px 12px 42px;
-    max-width: 500px;
-    width: 100%;
-    border-radius: 15px;
-    font-size: 16px;
+  left: -120px;
+}
 
-    &:focus {
-      border: 1px solid rgba(0, 0, 0, 0.2);
-    }
+.input {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 12px 20px;
+  padding-left: 42px;
+  width: 400px;
+  border-radius: 10px;
+  font-size: 16px;
+
+  &:focus {
+    border: 1px solid rgba(0, 0, 0, 0.2);
   }
 }
-.icon{
-  position: absolute;
-  width: 24px;
-  height: 24px;
+
+.icon {
+  width: 22px;
+  height: 22px;
   opacity: 0.3;
+  position: absolute;
   left: 14px;
   top: 12px;
 }
-.crossIcon {
+
+.clearIcon {
   width: 18px;
   height: 18px;
   opacity: 0.3;
@@ -33,16 +36,5 @@
 
   &:hover {
     opacity: 0.8;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .search {
-    position: absolute;
-    left: 0;
-
-    input {
-      width: 100%;
-    }
   }
 }
